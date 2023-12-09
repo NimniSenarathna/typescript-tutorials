@@ -12,8 +12,21 @@ guitars[0] = 2003
 guitars.unshift('Bentley')
 
 // Array anytype
-let emptyArray = []
+let emptyArray = [] 
 
 // Array explicit type
 let bands: string[] = []
 bands.push('Van Halen')
+
+// Tuple
+let myTuple: [string, number, boolean] = ['Nimni', 20, true]
+
+let mixed = ['John', 1, false]
+
+myTuple[1] = 2023
+
+// Objects
+let myObj: object
+myObj = []
+console.log(typeof myObj)
+myObj = bands

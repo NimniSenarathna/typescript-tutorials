@@ -11,3 +11,11 @@ var emptyArray = [];
 // Array explicit type
 var bands = [];
 bands.push('Van Halen');
+// Tuple
+var myTuple = ['Nimni', 20, true];
+var mixed = ['John', 1, false];
+myTuple[1] = 2023;
+// Objects
+var myObj;
+myObj = [];
+console.log(typeof myObj);
