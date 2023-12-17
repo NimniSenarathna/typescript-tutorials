@@ -10,3 +10,36 @@ type Guitarist = {
 }
 
 type userId = stringOrNumber
+
+// Literal types
+let myName: 'Nimni'
+
+let userName: 'Nimni' | 'John' | 'Amy'
+userName = 'Amy'
+
+// functions
+const add = (a: number, b: number): number => {
+    return a + b
+}
+
+const logMsg = (message: any): void => {
+    console.log(message)
+}
+
+logMsg('Hello!')
+logMsg(add(2,4))
+
+let substract = function(c: number, d: number): number{
+    return c - d
+}
+
+type mathFunction = (a: number, b: number) => number
+// interface mathFunction {
+//     (a: number, b: number): number
+// } 
+
+let multiply: mathFunction = function (c,d) {
+    return c * d
+}
+
+logMsg(multiply(2,6))
