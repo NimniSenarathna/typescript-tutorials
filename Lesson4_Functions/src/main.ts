@@ -43,3 +43,21 @@ let multiply: mathFunction = function (c,d) {
 }
 
 logMsg(multiply(2,6))
+
+// optional parameters
+const addAll = (a: number, b: number, c?: number): number => {
+    if (typeof c !== 'undefined') {
+        return a + b + c
+    }
+    return a + b
+}
+
+// default parameters
+const sumAll = (a: number = 2, b: number, c: number = 2): number => {
+    return a + b + c
+}
+
+logMsg(addAll(2,3,4))
+logMsg(addAll(2,3))
+logMsg(sumAll(2,3))
+logMsg(sumAll(undefined, 3))
