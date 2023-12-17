@@ -30,3 +30,47 @@ let myObj: object
 myObj = []
 console.log(typeof myObj)
 myObj = bands
+
+const exampleObj = {
+    prop1: 'Nimni',
+    prop2: true,
+}
+
+exampleObj.prop1 = 'NimniSen'
+
+interface Guitarist {
+    name: string,
+    active?: boolean,
+    albums: (string | number)[]
+}
+
+let evh: Guitarist = {
+    name: 'Eddie',
+    active: false,
+    albums: [2003, 20, 'OU2023']
+}
+
+let JP: Guitarist = {
+    name: 'Jimmy',
+    albums: ['JI', 'JII', 'JIV']
+}
+
+const greetGuitarist = (guitarsist: Guitarist ) => {
+    if (guitarsist.name) {
+        return `Hello ${guitarsist.name}!`
+    }
+    return 'Hello!'
+}
+
+console.log(greetGuitarist(JP))
+
+// Enums
+enum Grade {
+    U = 1,
+    D,
+    C,
+    B,
+    A,
+}
+
+console.log(Grade.U)
