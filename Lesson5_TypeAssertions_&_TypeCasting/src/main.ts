@@ -26,3 +26,12 @@ let nextVal: number = addOrConcat(2, 2, 'add') as number
 // Double casting or Force casting simply reffered as two assertions
 // 10 as string - not allowed, if want - use unknown
 (10 as unknown) as string
+
+// The DOM
+const img = document.querySelector('img')!
+const myImg = document.getElementById('#img') as HTMLImageElement
+const nextImg = <HTMLImageElement>document.getElementById('#img')  // not works for React
+
+img.src
+myImg.src  // non null assertions
+nextImg.src

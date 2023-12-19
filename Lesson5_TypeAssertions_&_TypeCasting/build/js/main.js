@@ -19,3 +19,10 @@ let nextVal = addOrConcat(2, 2, 'add');
 // Double casting or Force casting simply reffered as two assertions
 // 10 as string - not allowed, if want - use unknown
 10;
+// The DOM
+const img = document.querySelector('img');
+const myImg = document.getElementById('#img');
+const nextImg = document.getElementById('#img'); // not works for React
+img.src;
+myImg.src; // non null assertions
+nextImg.src;
