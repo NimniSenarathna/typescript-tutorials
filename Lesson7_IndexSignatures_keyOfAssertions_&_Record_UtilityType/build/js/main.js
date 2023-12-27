@@ -39,3 +39,18 @@ for (const key in student) {
 Object.keys(student).map(key => {
     console.log(student[key]);
 });
+// Record utility types vs index signatures
+const logStudentKey = (student, key) => {
+    console.log(`Student ${key}: ${student[key]}`);
+};
+logStudentKey(student, 'name');
+logStudentKey(student, 'GPA');
+const monthlyIncomes = {
+    salary: 500,
+    bonus: 100,
+    sidehustle: 250
+};
+// looping through record utility type - require keyOf
+for (const revenue in monthlyIncomes) {
+    console.log(monthlyIncomes[revenue]);
+}
