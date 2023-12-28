@@ -93,3 +93,22 @@ const usersArray = [
 ];
 console.log(getUsersProperty(usersArray, "email"));
 console.log(getUsersProperty(usersArray, "username"));
+// class with generics
+class StateObject {
+    constructor(value) {
+        this.data = value;
+    }
+    get state() {
+        return this.data;
+    }
+    set state(value) {
+        this.data = value;
+    }
+}
+const store = new StateObject("John");
+console.log(store.state);
+store.state = "David";
+// store.state = 10
+const myState = new StateObject([15]);
+myState.state = (["David", 20, true]);
+console.log(myState.state);
