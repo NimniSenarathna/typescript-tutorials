@@ -28,11 +28,41 @@ console.log(isTrue(true))
 console.log(isTrue(1))
 console.log(isTrue('Dave'))
 console.log(isTrue(''))
-console.log(isTrue(null))
-console.log(isTrue(undefined))
-console.log(isTrue({}))
-console.log(isTrue({ name: 'Dave' }))
-console.log(isTrue([]))
-console.log(isTrue([1, 2, 3]))
-console.log(isTrue(NaN))
-console.log(isTrue(-0))
+// console.log(isTrue(null))
+// console.log(isTrue(undefined))
+// console.log(isTrue({}))
+// console.log(isTrue({ name: 'Dave' }))
+// console.log(isTrue([]))
+// console.log(isTrue([1, 2, 3]))
+// console.log(isTrue(NaN))
+// console.log(isTrue(-0))
+
+// Interface with Generic example
+interface BoolCheck<T> {
+    value: T,
+    is: boolean,
+}
+
+const checkBoolValue = <T>(arg: T): BoolCheck<T> => {
+    if (Array.isArray(arg) && !arg.length) {
+        return {value: arg, is: false}
+    }
+    if (isObj(arg) && !Object.keys(arg as keyof T).length) {
+        return {value: arg, is: false}
+    }
+    return {value: arg, is: !!arg}
+}
+
+// Narrowing Generics example
+interface HasID {
+    id: number
+}
+
+const processUser = <T extends HasID> (user: T): T => 
+{
+    // process the user with logic here
+    return user
+}
+
+console.log(processUser({id: 1, name: 'David' }))
+// console.log(processUser({name: 'David' }))
